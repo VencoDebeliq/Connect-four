@@ -234,6 +234,11 @@ public class Game extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
             dispose();
         }
+        else if (draw())
+        {
+            JOptionPane.showMessageDialog(null, "IT'S A DRAW", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            dispose();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -255,6 +260,11 @@ public class Game extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
             dispose();
         }
+        else if (draw())
+        {
+            JOptionPane.showMessageDialog(null, "IT'S A DRAW", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            dispose();
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -266,7 +276,7 @@ public class Game extends javax.swing.JFrame {
                 Graphics g = pnlarr[j][2].getGraphics();
                 g.setColor(getPlayerColor());
                 g.fillOval(22, 22, 40, 40);
-                pnlarr[j][2].setCol(Color.green);
+                pnlarr[j][2].setCol(getPlayerColor());
                 setPlayerTurn(getPlayerTurn() * -1);
                 break;
             }
@@ -274,6 +284,11 @@ public class Game extends javax.swing.JFrame {
         if (won())
         {
             JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            dispose();
+        }
+        else if (draw())
+        {
+            JOptionPane.showMessageDialog(null, "IT'S A DRAW", "Good Game", JOptionPane.PLAIN_MESSAGE);
             dispose();
         }
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -297,6 +312,11 @@ public class Game extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
             dispose();
         }
+        else if (draw())
+        {
+            JOptionPane.showMessageDialog(null, "IT'S A DRAW", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            dispose();
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -316,6 +336,11 @@ public class Game extends javax.swing.JFrame {
         if (won())
         {
             JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            dispose();
+        }
+        else if (draw())
+        {
+            JOptionPane.showMessageDialog(null, "IT'S A DRAW", "Good Game", JOptionPane.PLAIN_MESSAGE);
             dispose();
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -339,6 +364,11 @@ public class Game extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
             dispose();
         }
+        else if (draw())
+        {
+            JOptionPane.showMessageDialog(null, "IT'S A DRAW", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            dispose();
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -360,6 +390,11 @@ public class Game extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
             dispose();
         }
+        else if (draw())
+        {
+            JOptionPane.showMessageDialog(null, "IT'S A DRAW", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            dispose();
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private boolean won()
@@ -373,7 +408,6 @@ public class Game extends javax.swing.JFrame {
                         && pnlarr[i][j].getCol().getRGB() == pnlarr[i][j + 3].getCol().getRGB()
                         && pnlarr[i][j].getCol().getRGB() != Color.yellow.getRGB())
                 {
-                    System.out.println("across");
                     return true;
                 }
             }			
@@ -386,7 +420,6 @@ public class Game extends javax.swing.JFrame {
                         && pnlarr[i][j].getCol().getRGB() == pnlarr[i + 3][j].getCol().getRGB()
                         && pnlarr[i][j].getCol().getRGB() != Color.yellow.getRGB())
                 {
-                    System.out.println("vertical");
                     return true;
                 }
             }
@@ -399,7 +432,6 @@ public class Game extends javax.swing.JFrame {
                         && pnlarr[i][j].getCol().getRGB() == pnlarr[i - 3][j + 3].getCol().getRGB()
                         && pnlarr[i][j].getCol().getRGB() != Color.yellow.getRGB())
                 {
-                    System.out.println("up diagonal");
                     return true;
                 }
             }
@@ -412,12 +444,23 @@ public class Game extends javax.swing.JFrame {
                         && pnlarr[i][j].getCol().getRGB() == pnlarr[i + 3][j + 3].getCol().getRGB()
                         && pnlarr[i][j].getCol().getRGB() != Color.yellow.getRGB())
                 {
-                    System.out.println("down diagonal");
-                    return true;
+                     return true;
                 }
             }
         }
         return false;
+    }
+    
+    private boolean draw()
+    {
+        for (int i = 0; i < 6; ++i)
+        {
+            for (int j = 0; j < 7; ++j)
+            {
+                if (pnlarr[i][j].getCol().getRGB() == Color.yellow.getRGB()) return false;
+            }
+        }
+        return true;
     }
     
     private Color getPlayerColor()
