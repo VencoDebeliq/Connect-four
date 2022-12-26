@@ -40,6 +40,8 @@ public class Game extends javax.swing.JFrame {
     public Game() {
         initComponents();
         init_arr();
+        setLocationRelativeTo(null);
+        setTitle("Connect Four");
         setPlayerTurn(1);
     }
 
@@ -231,7 +233,8 @@ public class Game extends javax.swing.JFrame {
         }
         if (won())
         {
-            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            String player = (getPlayerTurn() == 1 ? "PLAYER 1" : "PLAYER 2");
+            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, " + player + " YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
             dispose();
         }
         else if (draw())
@@ -257,7 +260,8 @@ public class Game extends javax.swing.JFrame {
         }
         if (won())
         {
-            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            String player = (getPlayerTurn() == 1 ? "PLAYER 1" : "PLAYER 2");
+            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, " + player + " YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);dispose();
             dispose();
         }
         else if (draw())
@@ -283,7 +287,8 @@ public class Game extends javax.swing.JFrame {
         }
         if (won())
         {
-            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            String player = (getPlayerTurn() == 1 ? "PLAYER 1" : "PLAYER 2");
+            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, " + player + " YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);dispose();
             dispose();
         }
         else if (draw())
@@ -309,7 +314,8 @@ public class Game extends javax.swing.JFrame {
         }
         if (won())
         {
-            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            String player = (getPlayerTurn() == 1 ? "PLAYER 1" : "PLAYER 2");
+            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, " + player + " YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);dispose();
             dispose();
         }
         else if (draw())
@@ -335,7 +341,8 @@ public class Game extends javax.swing.JFrame {
         }
         if (won())
         {
-            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            String player = (getPlayerTurn() == 1 ? "PLAYER 1" : "PLAYER 2");
+            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, " + player + " YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);dispose();
             dispose();
         }
         else if (draw())
@@ -361,7 +368,8 @@ public class Game extends javax.swing.JFrame {
         }
         if (won())
         {
-            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            String player = (getPlayerTurn() == 1 ? "PLAYER 1" : "PLAYER 2");
+            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, " + player + " YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);dispose();
             dispose();
         }
         else if (draw())
@@ -387,7 +395,8 @@ public class Game extends javax.swing.JFrame {
         }
         if (won())
         {
-            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
+            String player = (getPlayerTurn() == 1 ? "PLAYER 1" : "PLAYER 2");
+            JOptionPane.showMessageDialog(null, "CONGRATULATIONS, " + player + " YOU WON!", "Good Game", JOptionPane.PLAIN_MESSAGE);
             dispose();
         }
         else if (draw())
