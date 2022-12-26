@@ -480,9 +480,7 @@ public class Game extends javax.swing.JFrame {
         }
         return Color.BLUE;
     }
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void Run() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="jlapsed" desc=" Look and feel setting code (optional) ">
